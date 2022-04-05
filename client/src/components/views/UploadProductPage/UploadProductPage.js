@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Form, Input, Button, Typography } from 'antd';
 
-import FlieUpload from "../../Utils/FlieUpload.js"
+import FileUpload from "../../Utils/FileUpload.js"
 
 // const { Title } = Typography;
 const { TextArea } = Input;
@@ -24,7 +24,7 @@ function UploadProductPage() {
     // 옵션 select control
     const [Continet, setContinet] = useState(1) 
     // image 관련 useState
-    const [Image, setImage] = useState([])
+    const [Images, setImages] = useState([])
 
     const titleChangeHandler = (event) => {
         setTitle(event.currentTarget.value);
@@ -42,6 +42,10 @@ function UploadProductPage() {
         setContinet(event.currentTarget.value);
     }
     
+    const updateImages = (newImages) => {
+        setImages(newImages)
+    }
+
     
   return (
     <div style={{ maxWidth: '700px', margin: '2rem auto'}}>
@@ -51,7 +55,8 @@ function UploadProductPage() {
 
         <Form>
             {/* DropZone */}
-            <FlieUpload />
+            {/* refreshFunction 사용자 정의 함수 */}
+            <FileUpload refreshFunction={updateImages} />
             <br />
             <br />
             <label>이름</label>
