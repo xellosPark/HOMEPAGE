@@ -18,7 +18,7 @@ function FileUpload(props) {
         axios.post('/api/product/image', formData, config)
             .then(response => {
                 if (response.data.success) {
-                    // console.log(response.data)
+                    //console.log(response.data)
                     // image upLoad 부분
                     setImages([...Images, response.data.filePath])
                     props.refreshFunction([...Images, response.data.filePath])
