@@ -35,7 +35,7 @@ function FileUpload(props) {
         const currentIndex = Images.indexOf(image);
         let newImages = [...Images]
         // splice (스플라이스) 삭제 (스타트, 갯수, 추가, 추가 )  (1,1,2,3) 1번 지우고 2,3 채운다
-        console.log("currentIndex",currentIndex);
+        //console.log("currentIndex",currentIndex);
         newImages.splice(currentIndex, 1)
         setImages(newImages)
         // images delet 하고 새로 지우고 데이터를 부모 원도우에게 전달
